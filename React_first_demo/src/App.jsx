@@ -27,9 +27,26 @@ function App(){
     }
 
     return <>
-       <button onClick={updateTodo}>Add the new todo</button>
-       {todos.map((todo) => <Todo key = {todo.id} title = {todo.title} description = {todo.description}></Todo>)}
+        <WrapperComponent>
+          <input type="text" placeholder="Enter your todo"  style={{padding : "10px"}}/> <br /> <br />
+          <input type="text" placeholder="Enter your description" style={{padding : "10px"}}/> <br />  <br />
+           <button onClick={updateTodo}>Add the new todo</button>
+           {todos.map((todo) => <Todo key={todo.id} title = {todo.title} description={todo.description}></Todo>)}
+        </WrapperComponent>
+      
     </>
+}
+
+function WrapperComponent({children}){
+    return <div style={{
+       margin : "20px",
+       padding : "10px",
+       color : "red",
+       fontFamily : "sans-serif",
+       
+    }}>
+      {children}
+    </div>
 }
 
 
