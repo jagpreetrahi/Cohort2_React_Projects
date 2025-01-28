@@ -1,0 +1,50 @@
+.card {
+    border: 1px solid #ddd;
+    borderRadius: 8px;
+    padding: 20px;
+    margin: 20px;
+    maxWidth: 400px;
+    boxShadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    backgroundColor: #f8f9fa;
+    width : 400px;
+    height : 300px
+}
+
+.name {
+    fontSize: 24px;
+    marginBottom: 10px;
+    color: #333;
+}
+
+.description {
+    fontSize: 16px;
+    color: #555;
+    marginBottom: 15px;
+}
+
+.interests  {
+      fontSize : 20px;
+}
+
+.unordered  {
+      marginBottom : 30px;
+}
+
+.interest_list {
+      listStyle : none;
+       fontSize : 15px;
+       margin : 5px;
+       
+}
+
+.social_links {
+      width : 50px;
+      height : 30px;
+      padding : 10px 30px;
+      background : blue;
+      textDecoration : none; 
+      margin : 20px;
+      borderRadius : 5px ;
+      color : white,
+}
+
