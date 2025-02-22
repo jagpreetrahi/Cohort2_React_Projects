@@ -1,33 +1,55 @@
-import { useState } from 'react'
+import React, { useState } from "react";
 
 
+const CardComponent = React.lazy(() => import("./component/Creatcard"))
+const Formcard = React.lazy(() => import("./component/Formcard"))
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-// import Createcard  from './component/Creatcard'
-import Usercard from './component/Usercard'
+function App(){
+  const [card , setCard] = useState([{
+    id :1,
+    Name : "",
+    description : "",
+    social_icons : [],
+    interests_section : []
 
-
-
-function App() {
-  //  const [card , setCard] = useState([{
-  //     id : 1,
-  //     name  : "Jagpreet Singh",
-  //    description : "I am a founder of unicorn company",
-  //    interest_section : ['Ionic' , 'OpenSource' , 'App Dev']
-
-     
-  //  }])
-
-  return (
-    <>
-         <Usercard></Usercard>
-        {/* {card.map((cd) => <Createcard  key = {cd.id} name = {cd.name} description = {cd.description} interest_section = {cd.interest_section}></Createcard>)} */}
-    </>
-  )
+  }])
+   return <div>
+        <BrowserRouter>
+            
+           <Routes>
+              <Route path="/" element = {
+                  <WrapperComponent>
+                  
+                     <Formcard/>
+                   
+                  </WrapperComponent>
+               }/>
+               <Route path="/card" element = {
+                  <WrapperComponent>
+                        {card.map((cd) => <CardComponent key={cd.id} name = {cd.Name} description={cd.description}  interests_section={cd.interests_section} social_icons={cd.social_icons}/>)}
+                      
+                  </WrapperComponent>
+               }/>      
+           </Routes>
+        </BrowserRouter>
+        
+      
+   </div>
 }
 
 
 
 
 
+function WrapperComponent({children}){
+  return <div style={{border : "1 px solid red" , background : "pink",
+     width : "400px " , height : "400px" , margin : "0 auto", 
+  }}>
+     {children}
+  </div>
+}
 
-export default App
+
+
+export default App;
