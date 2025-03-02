@@ -11,7 +11,7 @@ export function Assignment7() {
 
     const handleReRender = () => {
         // Update state to force re-render
-        forceRender(prev => prev + 1);
+        forceRender(Math.random());
     };
 
     return (
